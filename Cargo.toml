@@ -1,0 +1,12 @@
+[package]
+name = "goap"
+version = "0.0.1"
+edition = "2021"
+license = "MIT"
+description = "Goal Oriented Action Planning"
+repository = "https://github.com/piot/goap-rs"
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+mash-rs = "0.0.1"
+log = "0.4.22"
