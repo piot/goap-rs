@@ -4,12 +4,17 @@
  */
 use mash_rs::murmur3_32;
 use std::collections::HashSet;
+pub mod prelude;
 
 pub struct PropertyId(u32);
 
 impl PropertyId {
     pub fn new(name: &str) -> Self {
         Self(murmur3_32(name.as_bytes(), 0))
+    }
+
+    pub fn inner(self) -> u32 {
+        self.0
     }
 }
 

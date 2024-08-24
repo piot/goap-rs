@@ -2,7 +2,7 @@
  * Copyright (c) Peter Bjorklund. All rights reserved. https://github.com/piot/goap-rs
  * Licensed under the MIT License. See LICENSE in the project root for license information.
  */
-use goap_rs::{Action, ActionStatus, ActionTrait, State};
+use goap_rs::prelude::*;
 
 #[derive(Default)]
 pub struct EatAction {
@@ -23,6 +23,12 @@ impl ActionTrait for EatAction {
             ActionStatus::Done
         }
     }
+}
+
+#[test]
+pub fn test_id() {
+    let id = PropertyId::new("hello");
+    assert_eq!(id.inner(), 0x248BFA47)
 }
 
 #[test]
