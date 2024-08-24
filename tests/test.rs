@@ -2,7 +2,7 @@
  * Copyright (c) Peter Bjorklund. All rights reserved. https://github.com/piot/goap-rs
  * Licensed under the MIT License. See LICENSE in the project root for license information.
  */
-use crate::{Action, ActionStatus, ActionTrait, State};
+use goap::{Action, ActionStatus, ActionTrait, State};
 
 #[derive(Default)]
 pub struct EatAction {

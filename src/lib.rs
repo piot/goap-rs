@@ -2,8 +2,6 @@
  * Copyright (c) Peter Bjorklund. All rights reserved. https://github.com/piot/goap-rs
  * Licensed under the MIT License. See LICENSE in the project root for license information.
  */
-mod test;
-
 use mash_rs::murmur3_32;
 use std::collections::HashSet;
 
@@ -60,6 +58,7 @@ pub trait ActionTrait {
     fn update(&mut self) -> ActionStatus;
 }
 
+#[allow(unused)]
 pub struct Action {
     pre_conditions: State,
     effects: State,
