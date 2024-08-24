@@ -38,9 +38,7 @@ pub struct State(HashSet<ConditionId>);
 
 impl State {
     pub fn new() -> Self {
-        Self(
-            Default::default()
-        )
+        Self(Default::default())
     }
     pub fn push(mut self, name: &str, value: bool) -> Self {
         self.0.insert(ConditionId::new(name, value));
@@ -71,8 +69,12 @@ pub struct Action {
 }
 
 impl Action {
-    pub fn new(pre_conditions: State, effects: State, cost: Cost, implementation:Box<dyn ActionTrait>) -> Self
-    {
+    pub fn new(
+        pre_conditions: State,
+        effects: State,
+        cost: Cost,
+        implementation: Box<dyn ActionTrait>,
+    ) -> Self {
         Self {
             pre_conditions,
             effects,

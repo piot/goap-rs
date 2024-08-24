@@ -4,7 +4,6 @@
  */
 use crate::{Action, ActionStatus, ActionTrait, State};
 
-
 #[derive(Default)]
 pub struct EatAction {
     pub debug_counter: usize,
@@ -26,14 +25,11 @@ impl ActionTrait for EatAction {
     }
 }
 
-
 #[test]
 pub fn test_eat() {
-    let eat_pre_conditions = State::new()
-        .push("has_food", true);
+    let eat_pre_conditions = State::new().push("has_food", true);
 
-    let eat_effects = State::new()
-        .push("hungry", false);
+    let eat_effects = State::new().push("hungry", false);
 
     let mut eat = Action::new(
         eat_pre_conditions,
