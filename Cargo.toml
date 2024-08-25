@@ -10,3 +10,7 @@ repository = "https://github.com/piot/goap-rs"
 [dependencies]
 mash-rs = "0.0.1"
 log = "0.4.22"
+
+[dev-dependencies]
+test-log = "0.2.16"
+
