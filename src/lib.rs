@@ -122,6 +122,12 @@ pub struct Goal {
     debug_name: String,
 }
 
+impl Display for Goal {
+    fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
+        write!(f, "goal:{}", self.debug_name)
+    }
+}
+
 impl Goal {
     pub fn new(requirements: State, priority: u32) -> Self {
         Self {
@@ -216,8 +222,11 @@ impl Planner {
         self
     }
 
-    pub fn find_plan(self, goal: Goal) -> Plan {
-        info!("finding a plan for the goal {:?}", goal);
-        Plan::new(self.actions)
+    pub fn find_plan(self, world_state: &State, goal: &Goal) -> Option<Plan> {
+        info!(
+            "finding a plan for the goal {} with world state {}",
+            goal, world_state
+        );
+        Some(Plan::new(self.actions))
     }
 }

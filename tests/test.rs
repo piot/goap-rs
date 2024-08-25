@@ -65,7 +65,9 @@ pub fn test_eat() {
         let keep_health_up_state = State::new().push("max_health", true);
         let healthy_goal = Goal::new(keep_health_up_state, 1).with_debug_string("healthy goal");
 
-        let mut actions = planner.find_plan(healthy_goal);
+        let world_state = State::new().push("max_health", false);
+
+        let mut actions = planner.find_plan(&world_state, &healthy_goal).unwrap();
         for (index, action) in actions.actions.iter_mut().enumerate() {
             info!("   action: {}: {:?}", index, action);
         }
